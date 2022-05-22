@@ -2,7 +2,7 @@
 HIT 237 Final Assignment 
 
 project_HIT237FA
-eva_final
+env_final
 app_Rickbike
 
 superuser ID: admin
