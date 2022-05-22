@@ -1,0 +1,64 @@
+{% extends "app_Rickbike/site_base.html" %}
+{% load static %}
+
+{% block custom_head_entries %}
+    <style>
+      table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+      }
+      table {
+        width:100%;
+      }
+      th, td {
+        padding: 5px;
+      }
+      th {
+        width: 20%;
+      }
+    </style>
+{% endblock %}
+
+{% block page_title %}Widget Detail{% endblock %}
+
+{% block page_heading %}
+  <header class="blog-header py-3">
+    <h1>Widget Detail</h1>
+  </header>
+{% endblock %}
+
+{% block main_body %}
+
+  <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+    {% if not widget %}
+    <p>No such Widget found.</p>
+    {% else %}
+    <table>
+      <tbody>
+        <tr>
+          <th>ID</th>
+          <td>{{ widget.id }}</td>
+        </tr>
+        <tr>
+          <th>Part Number</th>
+          <td>{{ widget.part_number }}</td>
+        </tr>
+        <tr>
+          <th>Description</th>
+          <td>{{ widget.description }}</td>
+        </tr>
+        <tr>
+          <th>Price</th>
+          <td>{{ widget.price }}</td>
+        </tr>
+        <tr>
+          <th>Created</th>
+          <td>{{ widget.date_added }}</td>
+        </tr>
+      </tbody>
+    </table>
+    {% endif %}
+
+  </div>
+
+{% endblock %}
